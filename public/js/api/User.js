@@ -15,15 +15,6 @@ class User {
   }
 
 
-// const user = {
-//   id: 12,
-//   name: 'Vlad'
-// };
-
-// User.setCurrent(user);
-
-// console.log(localStorage.user); // строка "{"id":12,"name":"Vlad"}"
-
   /**
    * Удаляет информацию об авторизованном
    * пользователе из локального хранилища.
@@ -32,20 +23,6 @@ class User {
     localStorage.removeItem('user');
   }
 
-// Пример использования:
-// const user = {
-//   id: 12,
-//   name: 'Vlad'
-// };
-
-// User.setCurrent(user);
-// let current = User.current();
-// console.log(current); // объект { id: 12, name: 'Vlad' }
-
-// User.unsetCurrent();
-
-// current = User.current();
-// console.log(current); // undefined
 
   /**
    * Возвращает текущего авторизованного пользователя
@@ -60,16 +37,7 @@ class User {
       return undefined;
     }
   }
-  // Пример использования:
-// const user = {
-//   id: 12,
-//   name: 'Vlad'
-// };
 
-// User.setCurrent(user);
-// const current = User.current();
-
-// console.log(current); // объект { id: 12, name: 'Vlad' }
 
 
   /**
@@ -93,17 +61,6 @@ class User {
     });
   }
 
-//   console.log(User.current()); // undefined
-// User.fetch((err, response) => {
-//   console.log(response.user.name); // Vlad
-//   console.log(User.current().name); // Vlad
-// });
-
-// // Пользователь больше не авторизован
-// User.fetch((err, response) => {
-//   console.log(response.success); // false
-//   console.log(User.current()); // undefined
-// });
 
   /**
    * Производит попытку авторизации.
@@ -126,15 +83,6 @@ class User {
     });
   }
 
-  // Пример использования:
-// const loginData = {
-//   email: 'test@test.ru',
-//   password: 'abracadabra',
-// };
-
-// User.login(loginData, (err, response) => {
-//   console.log(response);
-// });
 
   /**
    * Производит попытку регистрации пользователя.
@@ -158,16 +106,6 @@ class User {
     });
   }
 
-  // Пример использования:
-// const registrationData = {
-//   name: 'Vlad',
-//   email: 'test@test.ru',
-//   password: 'abracadabra'
-// };
-
-// User.register(registrationData, (err, response) => {
-//   console.log(response);
-// });
 
   /**
    * Производит выход из приложения. После успешного
@@ -188,7 +126,3 @@ class User {
     });
   }
 
-  // User.logout((err, response) => {
-  //   console.log(response);
-  // });
-}

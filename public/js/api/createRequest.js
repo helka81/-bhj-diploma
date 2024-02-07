@@ -46,16 +46,3 @@ const createRequest = options => {
   }
 };
 
-
-//   createRequest({
-//     url: 'https://example.com',
-//     data: {
-//       email: 'ivan@poselok.ru',
-//       password: 'odinodin'
-//     },
-//     method: 'GET',
-//     callback: (err, response) => {
-//       console.log('Ошибка, если есть', err);
-//       console.log('Данные, если нет ошибки', response);
-//     }
-//   });
