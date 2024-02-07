@@ -23,7 +23,3 @@ class Account extends Entity {
   }
 }
 
-// Пример использования:
-// Account.get(21, function (err, response) {
-//   // Обработка ответа или ошибки
-// });

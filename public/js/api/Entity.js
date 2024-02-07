@@ -47,20 +47,4 @@ class Entity {
   }
 }
 
-// Пример использования:
-// const data = {
-//   mail: 'ivan@biz.pro',
-//   password: 'odinodin',
-// };
 
-// Entity.list(data, function (err, response) {
-//   // Обработка ответа или ошибки
-// });
-
-// Entity.create({ mail: 'ivan@biz.pro' }, function (err, response) {
-//   // Обработка ответа или ошибки
-// });
-
-// Entity.remove({ mail: 'ivan@biz.pro' }, function (err, response) {
-//   // Обработка ответа или ошибки
-// });
