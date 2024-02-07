@@ -4,10 +4,26 @@
  * Имеет свойство URL со значением '/account'
  * */
 class Account extends Entity {
+
+  static URL = '/account';
   /**
    * Получает информацию о счёте
    * */
-  static get(id = '', callback){
-
+  /**
+   * Метод get отправляет GET запрос на сервер по заданному URL.
+   * @param {number} id - Идентификатор записи.
+   * @param {function} callback - Функция обратного вызова.
+   */
+  static get(id, callback) {
+    createRequest({
+      url: `${this.URL}/${id}`,
+      method: 'GET',
+      callback,
+    });
   }
 }
+
+// Пример использования:
+// Account.get(21, function (err, response) {
+//   // Обработка ответа или ошибки
+// });
