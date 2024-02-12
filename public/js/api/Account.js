@@ -9,11 +9,7 @@ class Account extends Entity {
   /**
    * Получает информацию о счёте
    * */
-  /**
-   * Метод get отправляет GET запрос на сервер по заданному URL.
-   * @param {number} id - Идентификатор записи.
-   * @param {function} callback - Функция обратного вызова.
-   */
+ 
   static get(id, callback) {
     createRequest({
       url: `${this.URL}/${id}`,
