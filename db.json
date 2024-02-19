@@ -77,6 +77,12 @@
       "email": "hell_sun.net@inbox.ru",
       "password": "pfcflf88",
       "id": "9ubx5klshuqsr5"
+    },
+    {
+      "name": "Елена",
+      "email": "elena.helka@yandex.ru",
+      "password": "pfcflf88",
+      "id": "381rze7wlssxbmye"
     }
   ],
   "accounts": [
@@ -134,6 +140,21 @@
       "name": "зарплата5",
       "user_id": "9ubx5klshuqsr5",
       "id": "9ubxd2slsj3c46r"
+    },
+    {
+      "name": "зарплата",
+      "user_id": "381rze7wlssxbmye",
+      "id": "9ubx2t4lssxqdfw"
+    },
+    {
+      "name": "подработка",
+      "user_id": "381rze7wlssxbmye",
+      "id": "9ubx6u8lssyi1qv"
+    },
+    {
+      "name": "разное",
+      "user_id": "381rze7wlssxbmye",
+      "id": "9ubxgk4lssz9zl2"
     }
   ],
   "transactions": [
@@ -271,6 +292,42 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "9ubxauclssyhqnj",
+      "type": "income",
+      "name": "получка",
+      "sum": 2000,
+      "account_id": "9ubx2t4lssxqdfw",
+      "user_id": "381rze7wlssxbmye",
+      "created_at": "2024-02-19T13:12:18.990Z"
+    },
+    {
+      "id": "9ubx684lssyidhj",
+      "type": "income",
+      "name": "шабашка",
+      "sum": 500,
+      "account_id": "9ubx6u8lssyi1qv",
+      "user_id": "381rze7wlssxbmye",
+      "created_at": "2024-02-19T13:12:48.582Z"
+    },
+    {
+      "id": "9ubxim0lssyimyf",
+      "type": "expense",
+      "name": "еда",
+      "sum": 1000,
+      "account_id": "9ubx2t4lssxqdfw",
+      "user_id": "381rze7wlssxbmye",
+      "created_at": "2024-02-19T13:13:00.854Z"
+    },
+    {
+      "id": "9ubx6pklsszafwy",
+      "type": "income",
+      "name": "не скажу",
+      "sum": 5000,
+      "account_id": "9ubxgk4lssz9zl2",
+      "user_id": "381rze7wlssxbmye",
+      "created_at": "2024-02-19T13:34:38.097Z"
     }
   ]
 }

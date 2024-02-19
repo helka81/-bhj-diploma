@@ -38,7 +38,7 @@ class AccountsWidget {
         return;
     }
 
-    Account.list((err, response) => {
+    Account.list({}, (err, response) => {
         if (err) {
             console.error('Ошибка при загрузке счетов:', err);
             return;
