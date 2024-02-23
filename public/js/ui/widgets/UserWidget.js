@@ -26,8 +26,15 @@ class UserWidget {
    * авторизованного пользователя
    * */
   update(){
+    // const currentUser = User.current();
+    // const nameUser = this.element.querySelector('.user-name');
+    // nameUser.textContent = currentUser.name;
     const currentUser = User.current();
-    const nameUser = this.element.querySelector('.user-name');
-    nameUser.textContent = currentUser.name;
+    if (currentUser) {
+        const nameUser = this.element.querySelector('.user-name');
+        nameUser.textContent = currentUser.name;
+    } else {
+        console.error('Данные о текущем пользователе не были получены');
   }
+} 
 }

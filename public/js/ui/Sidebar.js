@@ -22,6 +22,7 @@ class Sidebar {
     const sidebarToggle = document.querySelector('.sidebar-toggle');
     sidebarToggle.addEventListener('click', () => {
       sidebarMini.classList.toggle('sidebar-open');
+      sidebarMini.classList.toggle('sidebar-collapse');
     });
   }
 
@@ -49,6 +50,7 @@ class Sidebar {
             if (response.success) {
                 App.setState('init');
             }
+            App.setState('init');
         });
     });
   }

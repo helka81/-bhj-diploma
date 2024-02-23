@@ -1,23 +1,17 @@
-/**
- * Класс CreateTransactionForm управляет формой
- * создания новой транзакции
- * */
 class CreateTransactionForm extends AsyncForm {
-  /**
-   * Вызывает родительский конструктор и
-   * метод renderAccountsList
-   * */
   constructor(element) {
-    super(element)
+    super(element);
     this.renderAccountsList();
   }
 
-  /**
-   * Получает список счетов с помощью Account.list
-   * Обновляет в форме всплывающего окна выпадающий список
-   * */
   renderAccountsList() {
     const selectElement = this.element.querySelector('.accounts-select');
+
+    // Добавляем проверку на авторизованного пользователя
+    if (!User.current()) {
+      console.error('Пользователь не авторизован');
+      return;
+    }
 
     Account.list({}, (err, response) => {
       if (err) {
@@ -27,26 +21,17 @@ class CreateTransactionForm extends AsyncForm {
 
       const accounts = response.data;
 
-      // Очищаем список счетов перед добавлением новых
-      selectElement.innerHTML = '';
+      // Накопление разметки с помощью reduce
+      const optionsHTML = accounts.reduce((html, account) => {
+        html += `<option value="${account.id}">${account.name}</option>`;
+        return html;
+      }, '');
 
-      // Добавляем каждый счет в список
-      accounts.forEach(account => {
-        const option = document.createElement('option');
-        option.value = account.id;
-        option.textContent = account.name;
-        selectElement.appendChild(option);
-      });
+      // Присвоение разметки одним действием
+      selectElement.innerHTML = optionsHTML;
     });
-
   }
 
-  /**
-   * Создаёт новую транзакцию (доход или расход)
-   * с помощью Transaction.create. По успешному результату
-   * вызывает App.update(), сбрасывает форму и закрывает окно,
-   * в котором находится форма
-   * */
   onSubmit(data) {
     Transaction.create(data, (err, response) => {
       if (err) {
@@ -54,15 +39,10 @@ class CreateTransactionForm extends AsyncForm {
         return;
       }
 
-      // Сбрасываем форму
       this.element.reset();
-
-      // Закрываем всплывающее окно, содержащее форму
       const modalId = this.element.closest('.modal').dataset.modalId;
       const modal = App.getModal(modalId);
       modal.close();
-
-      // Обновляем информацию о приложении
       App.update();
     });
   }

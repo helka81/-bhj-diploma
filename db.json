@@ -155,6 +155,11 @@
       "name": "разное",
       "user_id": "381rze7wlssxbmye",
       "id": "9ubxgk4lssz9zl2"
+    },
+    {
+      "name": "дополнительно",
+      "user_id": "9ubx5klshuqsr5",
+      "id": "9ubxgcklsxebo4r"
     }
   ],
   "transactions": [
@@ -328,6 +333,24 @@
       "account_id": "9ubxgk4lssz9zl2",
       "user_id": "381rze7wlssxbmye",
       "created_at": "2024-02-19T13:34:38.097Z"
+    },
+    {
+      "id": "9ubxfvwlsxd0r3v",
+      "type": "expense",
+      "name": "зарплата",
+      "sum": 30000,
+      "account_id": "9ubxhtolsj0xw02",
+      "user_id": "9ubx5klshuqsr5",
+      "created_at": "2024-02-22T15:10:05.370Z"
+    },
+    {
+      "id": "9ubxffolsxe3fbh",
+      "type": "income",
+      "name": "не знаю",
+      "sum": 400,
+      "account_id": "9ubxh4olsiuu32j",
+      "user_id": "9ubx5klshuqsr5",
+      "created_at": "2024-02-22T15:40:09.676Z"
     }
   ]
 }

@@ -85,8 +85,8 @@ class AccountsWidget {
 
   renderItem(data) {
     const accountListHTML = this.getAccountHTML(data);
-    const container = document.querySelector('[data-widget="tree"]');
-    container.insertAdjacentHTML('beforeend', accountListHTML);
+    const accountPanel = document.querySelector('.accounts-panel');
+    accountPanel.insertAdjacentHTML('beforeend', accountListHTML);
 }
 }
 
