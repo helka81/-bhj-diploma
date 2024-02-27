@@ -67,7 +67,7 @@ class TransactionsPage {
         console.error('Ошибка при получении счета:', err);
         return;
       }
-      this.renderTitle(account.name);
+      this.renderTitle(account.data.name);
     });
     Transaction.list({ account_id: options.account_id }, (err, transactions) => {
       if (err) {
@@ -126,15 +126,26 @@ class TransactionsPage {
     return transactionHTML;
   }
 
+  // renderTransactions(data) {
+  //   const contentSection = this.element.querySelector('.content');
+  //   if (!data || data.length === 0) {
+  //     contentSection.innerHTML = '<p>Нет транзакций для отображения</p>';
+  //     return;
+  //   }
+  //   const transactionsHTML = data.map(item => this.getTransactionHTML(item)).join('');
+  //   contentSection.innerHTML = transactionsHTML;
+  // }
   renderTransactions(data) {
     const contentSection = this.element.querySelector('.content');
-    if (!data || data.length === 0) {
-      contentSection.innerHTML = '<p>Нет транзакций для отображения</p>';
-      return;
+    
+    if (!data || !data.data || data.data.length === 0) {
+        contentSection.innerHTML = '<p>Нет транзакций для отображения</p>';
+        return;
     }
-    const transactionsHTML = data.map(item => this.getTransactionHTML(item)).join('');
+    
+    const transactionsHTML = data.data.map(item => this.getTransactionHTML(item)).join('');
     contentSection.innerHTML = transactionsHTML;
-  }
+}
 }
 
 
