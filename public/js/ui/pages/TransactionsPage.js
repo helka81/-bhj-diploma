@@ -1,3 +1,4 @@
+
 class TransactionsPage {
   constructor(element) {
     if (!element) {
@@ -126,15 +127,6 @@ class TransactionsPage {
     return transactionHTML;
   }
 
-  // renderTransactions(data) {
-  //   const contentSection = this.element.querySelector('.content');
-  //   if (!data || data.length === 0) {
-  //     contentSection.innerHTML = '<p>Нет транзакций для отображения</p>';
-  //     return;
-  //   }
-  //   const transactionsHTML = data.map(item => this.getTransactionHTML(item)).join('');
-  //   contentSection.innerHTML = transactionsHTML;
-  // }
   renderTransactions(data) {
     const contentSection = this.element.querySelector('.content');
     
@@ -145,7 +137,5 @@ class TransactionsPage {
     
     const transactionsHTML = data.data.map(item => this.getTransactionHTML(item)).join('');
     contentSection.innerHTML = transactionsHTML;
+  }
 }
-}
-
-
