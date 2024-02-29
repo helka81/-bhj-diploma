@@ -18,16 +18,11 @@ const createRequest = options => {
     }
   }
 
-  // Обработчик события завершения запроса
+ // Обработчик события завершения запроса
   xhr.onload = () => {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      // Запрос успешен
-      options.callback(null, xhr.response);
-    } else {
-      // Ошибка в запросе
-      options.callback(new Error(`Ошибка запроса с HTTP-статусом ${xhr.status}`), null);
-    }
-  };
+  // Запрос успешен
+    options.callback(null, xhr.response);
+};
 
   // Обработчик события ошибки запроса
   xhr.onerror = () => {

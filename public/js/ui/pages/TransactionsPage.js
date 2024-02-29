@@ -35,11 +35,12 @@ class TransactionsPage {
     if (!confirm('Вы действительно хотите удалить счёт?')) {
       return;
     }
-    Account.remove(this.lastOptions.account_id, (err) => {
+    Account.remove({ id : this.lastOptions.account_id }, (err) => {
       if (err) {
         console.error('Ошибка при удалении счёта:', err);
         return;
       }
+      this.clear();
       App.updateWidgets();
       App.updateForms();
     });
@@ -49,11 +50,12 @@ class TransactionsPage {
     if (!confirm('Вы действительно хотите удалить эту транзакцию?')) {
       return;
     }
-    Transaction.remove(id, (err) => {
+    Transaction.remove({ id: id }, (err) => {
       if (err) {
         console.error('Ошибка при удалении транзакции:', err);
         return;
       }
+      
       App.update();
     });
   }
